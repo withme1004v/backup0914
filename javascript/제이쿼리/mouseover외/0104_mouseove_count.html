@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      div.out {
+        width: 20%;
+        height: 120px;
+        margin: 0 15px;
+        background: #d6edfc;
+        float: left;
+      }
+
+      div.in {
+        width: 60%;
+        height: 60%;
+        background: #fc0;
+        margin: 10px auto;
+        position: relative;
+        top: 100px;
+      }
+      p {
+        line-height: 16px;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+      $(function () {
+        var i = 0;
+
+        $("div.overout")
+          .mouseover(function () {
+            $("p:first", this).text("mouse over");
+            $("p:last", this).text(++i);
+          })
+          .mouseout(function () {
+            $("p:first", this).text("mouse out");
+          });
+
+        var n = 0;
+        $("div.enterleave")
+          .mouseenter(function () {
+            $("p:first", this).text("mouse enter");
+            $("p:last", this).text(++n);
+          })
+          .mouseleave(function () {
+            $("p:first", this).text("mouse leave");
+          });
+
+        var h = 0;
+        $("div.hover").hover(
+          function () {
+            $("p:first", this).text("mouse hover");
+            $("p:last", this).text(++h);
+          },
+          function () {
+            $("p:first", this).text("mouse");
+          }
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <div class="out enterleave">
+      <p>move your mouse</p>
+      <div class="in overout">
+        <p>move your mouse</p>
+        <p>0</p>
+      </div>
+      <p>0</p>
+    </div>
+    <div class="out enterleave">
+      <p>move your mouse</p>
+      <div class="in enterleave">
+        <p>move your mouse</p>
+        <p>0</p>
+      </div>
+      <p>0</p>
+    </div>
+    <!-- <div class="out hover">
+      <p>move your mouse</p>
+      <div class="in hover">
+        <p>move your mouse</p>
+        <p>0</p>
+      </div>
+      <p>0</p>
+    </div> -->
+  </body>
+</html>

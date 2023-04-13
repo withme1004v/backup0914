@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Icon</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .tabcontent {
+        color: #fff;
+        padding: 50px;
+        text-align: center;
+      }
+      .tablink {
+        display: block;
+        width: 25%;
+        padding: 10px 0;
+        background: #555;
+        float: left;
+        text-align: center;
+        cursor: pointer;
+      }
+      .tablink:hover {
+        background: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="con1" class="tabcontent">
+      <h1>London</h1>
+      <p>London is the capital city of England</p>
+    </div>
+    <div id="con2" class="tabcontent">
+      <h1>Paris</h1>
+      <p>Paris is the capital city of France</p>
+    </div>
+    <div id="con3" class="tabcontent">
+      <h1>Tokyo</h1>
+      <p>Tokyo is the capital city of Japan</p>
+    </div>
+    <div id="con4" class="tabcontent">
+      <h1>Oslo</h1>
+      <p>Oslo is the capital city of Norway</p>
+    </div>
+    <p class="tablink" onclick="tab(0)">London</p>
+    <p class="tablink" onclick="tab(1)">Paris</p>
+    <p class="tablink" onclick="tab(2)">Tokyo</p>
+    <p class="tablink" onclick="tab(3)">Oslo</p>
+    <script>
+      
+      let color = ["red", "green", "blue", "orange"];
+      let content = document.getElementsByClassName("tabcontent");
+      let btn = document.getElementsByClassName("tablink");
+     function tab(j) {
+      for (let i = 0; i <= 3; i++) {
+        content[i].style.backgroundColor = color[i];
+        btn[i].style.backgroundColor = color[i];
+        content[i].style.display = "none";
+        content[j].style.display = "block";
+      }
+     }
+    //  document.getElementById("aa").click(); 
+    tab(0);
+
+      
+    </script>
+  </body>
+</html>

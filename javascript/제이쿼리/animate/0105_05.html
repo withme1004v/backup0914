@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      /*.txt1{ width: 50px; text-align: center; background: #0ff;}  */
+    </style>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    "
+    <script>
+      $(function () {
+        $(".txt1")
+          .animate({ "margin-left": "100px" }, 1000)
+          .animate({ "margin-left": "200px" }, 1000)
+          .animate({ "margin-left": "300px" }, 1000);
+        $(".txt2").delay(3000).animate({ "margin-left": "100px" }, 1000);
+      });
+    </script>
+  </head>
+  <body>
+    <p class="txt1">내용1</p>
+    <p class="txt2">내용2</p>
+  </body>
+</html>

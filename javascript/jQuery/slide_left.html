@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background: #ccc;
+            transition: 0.5s;;
+        }
+    </style>
+    <script src="../js/jquery-3.6.1.js"></script>
+    <script>
+$(function(){
+$("#left").click(function(){
+$(".box").css("width","1000px");
+});
+$("#right").click(function(){
+$(".box").css("width","500px");
+});
+
+let  bo = true;
+$("#toggle").click(function(){
+  console.log(bo);
+if(bo) {
+    $(".box").css("width","1000px"); 
+}else {
+    $(".box").css("width","500px"); 
+   
+}
+bo = !bo;
+});
+});
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    <button id="left">left</button>
+    <button id="right">right</button>
+    <button id="toggle">toggle</button>
+</body>
+</html>

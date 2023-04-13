@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .slideUp {
+        animation-name: slideUp;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+      .slidedown {
+        animation-name: slidedown;
+        animation-duration: 1s;
+        animation-fill-mode: backwards;
+      }
+
+      @keyframes slideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(70%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+      }
+      @keyframes slidedown {
+        0% {
+          opacity: 1;
+          transform: translateY(0%);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(70%);
+        }
+      }
+
+      body {
+        height: 1500px;
+      }
+      .top {
+        height: 500px;
+      }
+      img {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <h1>The onscroll Event</h1>
+    </div>
+    <!-- <p>Scroll down this page.</p>
+<p>When you have scrolled 350px from the top, an image will slide in.</p> -->
+
+    <hr />
+    <div class="col-1">
+      <img id="myImg" src="../../images/photo1.jpg" width="304" height="228" />
+    </div>
+
+    <script>
+      window.onscroll = function () {
+        myFunction();
+      };
+
+      function myFunction() {
+        if (document.documentElement.scrollTop > 350) {
+          document.getElementById("myImg").className = "slideUp";
+        } else {
+          document.getElementById("myImg").className = "slidedown";
+        }
+      }
+    </script>
+  </body>
+</html>

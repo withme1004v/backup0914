@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/all.css">
+<style>
+/*
+.fa {
+  font-size: 150px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
+}
+*/
+    .fa-solid {
+  font-size: 150px;
+  cursor: pointer;
+/*   user-select: none;     */
+}
+
+.fa-solid:hover {
+  color: darkblue;
+}
+</style>
+</head>
+<body>
+
+<!--<p>Click on the icon to toggle between thumbs-up and thumbs-down (like/dislike):</p>-->
+
+<!--<i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>-->
+<i onclick="myFunction()" class="fa-solid fa-thumbs-up"></i>
+<!-- <i onclick="myFunction()" class="fa-solid fa-thumbs-down"></i>
+ -->
+<script>
+    var icon = document.getElementsByClassName("fa-solid")[0].classList;
+    var x = icon[1].slice(10);
+    console.log(icon);
+    var bool = true;
+function myFunction() {
+  //icon.remove("fa-thumbs-down");
+  //icon.toggle("fa-thumbs-down");
+  
+ /*  if(bool) {
+    icon.replace("fa-thumbs-up","fa-thumbs-down");
+      
+  }else {
+    icon.replace("fa-thumbs-down","fa-thumbs-up");
+  }
+  bool = !bool;
+  console.log(bool);
+} */
+if(bool) {
+    icon.replace(x,"down");
+      
+  }else {
+    icon.replace("fa-thumbs-down","fa-thumbs-up");
+  }
+  bool = !bool;
+}
+//function myFunction(x) {
+//  x.classList.toggle("fa-thumbs-down");}
+</script>
+
+</body>
+</html>
+

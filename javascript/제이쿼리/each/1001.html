@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>basic :: each event</title>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<style>
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background: #555;
+	color: #000;
+}
+.container .title {
+	margin: 0 0 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #000;
+}
+.container .list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: 24px;
+	font-size: 0.875em;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(function(){
+	$(".list li").each(function(i, element){
+		console.log("i : "+i);
+		console.log("element : "+element);
+		console.log("this : "+this);
+		console.log("text : "+$(this).text());
+		console.log("data-test : "+$(this).attr("data-test"));
+		console.log("========================================");
+	});
+});
+</script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<div class="container">
+	<h1 class="title">basic :: each event</h1>
+	<ul class="list">
+		<li data-test="1">one</li>
+		<li data-test="2">two</li>
+		<li data-test="3">three</li>
+	</ul>
+</div>
+</body>
+</html>

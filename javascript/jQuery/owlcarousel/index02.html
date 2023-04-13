@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.css" />
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/main2.js"></script>
+    <style>
+      html {
+        cursor: url(images/cursur.png), auto;
+      }
+      #slide {
+  position: relative;
+  width: 1920px;
+  height: 500px;
+      }
+      .item {
+        width: 100%;
+        height: 500px;
+        background: #ccc;
+      }
+      .owl-carousel .owl-nav button.owl-prev,
+      .owl-carousel .owl-nav button.owl-next {
+        position: absolute;
+        text-indent: -9999px;
+        width: 30px;
+        height: 45px;
+        background: url(images/btns.png);
+        top: 50%;
+      }
+      .owl-carousel .owl-nav button.owl-prev {
+        left: 50px;
+      }
+      .owl-carousel .owl-nav button.owl-next {
+        right: 50px;
+        background-position: -30px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="slide">
+      <div class="loop owl-carousel owl-theme">
+        <div class="item" style="width: 1350px">
+          <img src="images/bee-7707052_1920.jpg" alt="" />
+        </div>
+        <div class="item" style="width: 1350px">
+          <img src="images/bee-7707052_1920.jpg" alt="" />
+        </div>
+        <div class="item" style="width: 1350px">
+          <img src="images/bee-7707052_1920.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

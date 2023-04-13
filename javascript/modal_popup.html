@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #my_modal {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      iframe {
+        width: 300px;
+        height: 500px;
+        border: none;
+      }
+    </style>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+      $(function () {
+        $("#my_modal").hide();
+        $("#chatBot").click(function () {
+          // 모달창 띄우기
+          $("#my_modal").show();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="my_modal">
+      <iframe src="icon02.html" id="chat_iframe"></iframe>
+    </div>
+    <button id="chatBot">버튼</button>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 600px;
+        border: 1px solid #000;
+      }
+      .txt1 {
+        width: 10%;
+        text-align: center;
+        background: #f00;
+      }
+    </style>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+      $(function () {
+        var i = 1;
+        /* $(".go").click(function () {
+          i++;
+          if (i <= 10) {
+            $(".txt1").animate({ "margin-left": "+=10%" }, 300);
+          }
+        });
+        $(".back").click(function () {
+          i--;
+          if (i < 1) {
+            i = 1;
+            return false;
+          }
+          $(".txt1").animate({ "margin-left": "-=10%" }, 300);
+        });*/
+        $("button").click(function () {
+          //if (!$(".txt1").is(":animated")) {
+          //.txt1이 애니메이션 중이면 동작하지 않는다
+          if ($(this).hasClass("back")) {
+            i--;
+            if (i < 1) {
+              i = 1;
+              return false;
+              //#마지막에 return true값을 주면 함수가 종료.
+            }
+            console.log(i);
+            $(".txt1").animate({ "margin-left": "-=10%" }, 500);
+          } else {
+            i++;
+            if (i > 10) {
+              i = 10;
+              return false;
+            }
+            console.log(i);
+            $(".txt1").animate({ "margin-left": "+=10%" }, 500);
+          }
+          // }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <button class="back">back</button>
+      <button class="go">go</button>
+    </p>
+    <div class="wrap">
+      <p class="txt1">내용1</p>
+    </div>
+  </body>
+</html>

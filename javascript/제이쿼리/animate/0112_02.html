@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>이미지 슬라이드</title>
+<style>
+    body{
+        margin: 20px auto;
+        padding: 0;
+        width: 620px;
+        background: #192839;
+    } 
+    .thumbs {
+       float: left;
+       width: 100px;
+    }
+    .thumbs img {
+        margin-bottom: 3px;
+        width: 100px;
+        height: 80px;
+        padding: 5px;
+        border: 1px solid #ccc;
+    }
+    .thumbs img:hover{
+        border-color: #fff;
+    }
+    .thumbs img.on{
+        border-color: #ef4018;
+    }
+    #largeImg {
+        margin-left: 120px;
+        padding: 5px;
+        width: 500px;
+        height: 280px;
+        border: 1px solid #ccc;
+    }
+    #largeImg img {
+        width: 500px;
+        height: 280px;
+    }
+</style>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script>
+ $(function(){
+   /*$(".thumbs a").click(function(e){
+       e.preventDefault();
+       var path = $(this).attr("href");
+      //$("#largeImg img").attr("src",path);
+      //$("#largeImg img").attr({src:path});
+       if(path != $("#largeImg img").attr("src")){
+           $("#largeImg img").attr({src:path});
+           $("#largeImg img").css({opacity:"0"}).stop().animate({opacity:"1"},1000);
+       }
+   });  */
+     var current = 1;
+     $(".thumbs a").eq(current-1).find("img").addClass("on");
+   $(".thumbs a").click(function(e){
+       e.preventDefault();
+       //var path = $(this).children("img").attr("src");
+       var path = $(this).find("img").attr("src");
+      //$("#largeImg img").attr("src",path);
+      //$("#largeImg img").attr({src:path});
+       if(path != $("#largeImg img").attr("src")){
+           $("#largeImg img").attr({src:path});
+           $("#largeImg img").css({opacity:"0"}).stop().animate({opacity:"1"},1000);
+       }
+       $(".thumbs a").find("img").removeClass("on");
+       $(this).find("img").addClass("on");
+       
+   });
+    var current = 1;
+    /*$(".thumbs a").eq(current-1).find("img").addClass("on");*/
+   function interMove(){
+	if(current < 6){ 
+		current=current+1;
+	}else{
+		current=1;
+	}
+    $(".thumbs a").find("img").each(function(){
+		if($(this).hasClass("on")){
+			$(this).removeClass("on");
+		}
+	});
+	$(".thumbs a").eq(current-1).find("img").addClass("on");
+       
+       
+     var path="images/photo"+current+".jpg"; 
+     $("#largeImg img").attr("src", path)
+	 .css({opacity:0})
+	 .stop()
+	 .animate({opacity:1}, 500);
+   }
+    var interval = setInterval(interMove, 2000);
+    $(".thumbs a").hover(function(){
+       clearInterval(interval); 
+    },function(){
+       interval=setInterval(interMove,2000); 
+    });
+ });
+</script>
+</head>
+<body>
+    <!--<div class="thumbs">
+        <a href="images/photo1.jpg"><img src="images/photo1.jpg" alt="photo1"></a>
+        <a href="images/photo2.jpg"><img src="images/photo2.jpg" alt="photo2"></a>
+        <a href="images/photo3.jpg"><img src="images/photo3.jpg" alt="photo3"></a>
+    </div>
+    <div id="largeImg"><img src="images/photo1.jpg" alt="photo1"></div>-->
+    <div class="thumbs">
+        <a href="#"><img src="images/photo1.jpg" alt="photo1"></a>
+        <a href="#"><img src="images/photo2.jpg" alt="photo2"></a>
+        <a href="#"><img src="images/photo3.jpg" alt="photo3"></a>
+        <a href="#"><img src="images/photo4.jpg" alt="photo4"></a>
+        <a href="#"><img src="images/photo5.jpg" alt="photo5"></a>
+        <a href="#"><img src="images/photo6.jpg" alt="photo6"></a>
+    </div>
+    <div id="largeImg"><img src="images/photo1.jpg" alt="photo1"></div>
+</body>
+</html>

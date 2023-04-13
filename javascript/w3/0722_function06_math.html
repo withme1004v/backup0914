@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <script>
+      var num = 2.12345;
+      document.write(Math.max(num,10,5)+"<br>");//최대값
+      document.write(Math.min(num,10,5)+"<br>");//최소값
+      document.write(Math.ceil(num)+"<br>");//3 4 5 6 크거나 같은 값중에 작은정수
+      document.write(Math.floor(num)+"<br>");//2 1 0 -1 작거나 같은 값중에 큰 정수
+      document.write(Math.random()+"<br>");//0보다 크고 1보다 작은수
+      document.write(Math.ceil(Math.random()*3)+"<br>");
+      document.write(Math.floor(Math.random()*3)+"<br>");
+      var arr = ["짜장면", "돈까스", "햄버거", "피자", "샌드위치", "냉면"];
+      var i = Math.floor(Math.random()*arr.length);
+      console.log(i);
+      document.write(arr[i]);
+      var color = ["#f00", "#0f0", "#00f", "#ff0", "#0ff", "#f0f"];
+      function change() {
+        var i = Math.floor(Math.random()*color.length);
+        document.bgColor = color[i];
+      }
+    </script>
+</head>
+<body>
+    <button onclick="change()">배경색 바꾸기</button>
+</body>
+</html>

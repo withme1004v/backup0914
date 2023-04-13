@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #555;
+      }
+      .color div {
+        float: left;
+        width: 80px;
+        height: 20px;
+        text-align: center;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+    </style>
+    src="http://code.jquery.com/jquery-1.10.1.min.js"
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        /*$(".color div").eq(0).css({"background-color":"#D535D7"});
+         $(".color div").eq(1).css({"background-color":"#D73588"});
+         $(".color div").eq(2).css({"background-color":"#D78435"});
+         $(".color div").eq(3).css({"background-color":"#88D735"});
+         $(".color div").eq(4).css({"background-color":"#35A2D7"});*/
+        $(".color div").each(function () {
+          $(this).css({ "background-color": $(this).text() });
+        });
+        $(".color div").click(function () {
+          var bg = $(this).text();
+          $("body").animate({ "background-color": bg }, 1000);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="color">
+      <div>#D535D7</div>
+      <div>#D73588</div>
+      <div>#D78435</div>
+      <div>#88D735</div>
+      <div>#35A2D7</div>
+    </div>
+  </body>
+</html>

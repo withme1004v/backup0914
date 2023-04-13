@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>basic :: each event</title>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<style>
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background: #555;
+	color: #000;
+}
+.container .title {
+	margin: 0 0 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #000;
+}
+.container .navi {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.container .navi li a {
+	display: block;
+	margin-left: 0;
+	margin-bottom: 5px;
+	padding: 10px;
+	text-decoration: none;
+	font-size: 0.875em;
+	width: 150px;
+	height: 30px;
+	color: #000;
+	border: 1px solid #666;
+	-webkit-transition: all 200ms;
+	transition: all 200ms;
+}
+.container .navi li a:hover {
+	margin-left: 15px;
+	height: 120px;
+	border-width: 4px;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(function(){
+	$(".navi li a").each(function(){
+		var bgimg=$(this).attr("data-img");
+		// console.log("bgimg : "+bgimg);
+		// $(this).css({"background-image":"url(images/"+bgimg+")"});
+		$(this).text(bgimg);
+	});
+	/*
+	$(".navi li a").hover(
+		function(){
+			$(this).stop().animate({"margin-left":"15px", height:"120px"}, 200);
+		},
+		function(){
+			$(this).stop().animate({"margin-left":0, height:"30px"}, 200);
+		}
+	);
+	*/
+});
+</script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<div class="container">
+	<h1 class="title">basic :: each event</h1>
+	<ul class="navi">
+		<li><a href="#" data-img="zoo1.jpg"></a></li>
+		<li><a href="#" data-img="zoo2.jpg"></a></li>
+		<li><a href="#" data-img="zoo3.jpg"></a></li>
+		<li><a href="#" data-img="zoo4.jpg"></a></li>
+	</ul>
+</div>
+</body>
+</html>

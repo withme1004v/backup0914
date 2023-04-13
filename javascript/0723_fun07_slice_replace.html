@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .btn a:last-child {
+        margin-left: 30px;
+      }
+      span {
+        /*text-decoration: none;*/
+        color: #333;
+        cursor: pointer;
+      }
+      span:hover {
+        text-decoration: underline;
+      }
+      img {
+        width: 300px;
+      }
+    </style>
+    <script>
+      var i = 1;
+      function prev() {
+        i--;
+        if (i < 1) {
+          i = 6;
+        }
+        document.getElementsByTagName("img")[0].src =
+          "../images/photo" + i + ".jpg";
+      }
+      //function next(e) {
+        //e.preventDefault();
+        function next() {
+
+        
+        i++;
+        if (i > 6) {
+          i = 1;
+        }
+        var imgsr = document.getElementsByTagName("img")[0];
+        //  var im = imgsr.getAttribute("src");
+        // imgsr.setAttribute("src",im.replace(im.slice(12,13),i));
+        imgsr.setAttribute(
+          "src",
+          imgsr
+            .getAttribute("src")
+            .replace(imgsr.getAttribute("src").slice(-5, -4), i)
+        );
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>이미지 넘기기</h1>
+      <div class="btn">
+        <span onclick="prev()">이전으로</span>
+        <a href="http://www.naver.com" onclick="next(event)">다음으로</a>
+      </div>
+      <img src="../images/photo1.jpg" alt="photo1" />
+    </div>
+  </body>
+</html>

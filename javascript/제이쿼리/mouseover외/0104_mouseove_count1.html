@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      div.out {
+        width: 20%;
+        height: 120px;
+        margin: 0 15px;
+        background: #d6edfc;
+        float: left;
+      }
+
+      div.in {
+        width: 60%;
+        height: 60%;
+        background: #fc0;
+        margin: 10px auto;
+        position: relative;
+        top: 100px;
+      }
+      p {
+        line-height: 16px;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+      $(function () {
+        var i = 0;
+
+        $("div.in")
+          .mouseenter(function () {
+            $(".out").css({ backgroundColor: "#f00" });
+          })
+          .mouseout(function () {
+            $("p:first", this).text("mouse out");
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="out enterleave">
+      <p>move your mouse</p>
+      <div class="in">
+        <p>move your mouse</p>
+        <p>0</p>
+      </div>
+      <p>0</p>
+    </div>
+    <div class="out enterleave">
+      <p>move your mouse</p>
+      <div class="in">
+        <p>move your mouse</p>
+        <p>0</p>
+      </div>
+      <p>0</p>
+    </div>
+  </body>
+</html>

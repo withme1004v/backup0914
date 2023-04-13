@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #000;
+        text-align: center;
+      }
+      .tri {
+        margin: 100px auto 20px;
+        width: 0;
+        height: 0;
+        border-top: 20px solid none;
+        border-bottom: 20px solid #fff;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        position: relative;
+      }
+    </style>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+      $(function () {
+        function move() {
+          $(".tri")
+            .animate({ top: "-5px" }, 500, "linear")
+            .animate({ top: "5px" }, 500, "linear");
+        }
+        var int = setInterval(move, 1000);
+        /*var str = true;
+        $("button").click(function(){
+          if(str) {
+            clearInterval(int);  
+          }else {
+            int = setInterval(move,1000);  
+          }
+          str = !str;
+        }); */
+        /* $("button").hover(
+          function () {
+            clearInterval(int);
+          },
+          function () {
+            int = setInterval(move, 1000);
+          }
+        );*/
+        $("button").click(function () {
+          clearInterval(int);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="tri"></div>
+    <button value="stop">stop</button>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pageScroll1.html</title>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .title {
+        text-align: center;
+        font-size: 3.2em;
+        margin-top: 250px;
+      }
+
+      section {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: url(../../images/photo1.jpg) no-repeat 50% / cover;
+        clip-path: circle(0 at 50% 50%);
+      }
+
+      .container {
+        position: relative;
+        border: 1px solid red;
+        top: 200vh;
+        background: #ccc;
+        padding: 100px;
+        line-height: 1.5em;
+      }
+    </style>
+  </head>
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        var TOP = $(window).scrollTop();
+        console.log(TOP);
+        $("section").css("clip-path", "circle(" + TOP + "px at 50% 50%)");
+      });
+    });
+  </script>
+
+  <body>
+    <h1 class="title">Scroll To See Magic Again...</h1>
+    <section></section>
+    <div class="container">
+      <h2>content</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi excepturi
+        reprehenderit sed iusto alias, aliquid repellendus? Ad in distinctio ea
+        ab at commodi quod repellendus hic, culpa repellat, quae nam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi excepturi
+        reprehenderit sed iusto alias, aliquid repellendus? Ad in distinctio ea
+        ab at commodi quod repellendus hic, culpa repellat, quae nam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi excepturi
+        reprehenderit sed iusto alias, aliquid repellendus? Ad in distinctio ea
+        ab at commodi quod repellendus hic, culpa repellat, quae nam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi excepturi
+        reprehenderit sed iusto alias, aliquid repellendus? Ad in distinctio ea
+        ab at commodi quod repellendus hic, culpa repellat, quae nam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi excepturi
+        reprehenderit sed iusto alias, aliquid repellendus? Ad in distinctio ea
+        ab at commodi quod repellendus hic, culpa repellat, quae nam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi excepturi
+        reprehenderit sed iusto alias, aliquid repellendus? Ad in distinctio ea
+        ab at commodi quod repellendus hic, culpa repellat, quae nam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi excepturi
+        reprehenderit sed iusto alias, aliquid repellendus? Ad in distinctio ea
+        ab at commodi quod repellendus hic, culpa repellat, quae nam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi excepturi
+        reprehenderit sed iusto alias, aliquid repellendus? Ad in distinctio ea
+        ab at commodi quod repellendus hic, culpa repellat, quae nam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi excepturi
+        reprehenderit sed iusto alias, aliquid repellendus? Ad in distinctio ea
+        ab at commodi quod repellendus hic, culpa repellat, quae nam?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi excepturi
+        reprehenderit sed iusto alias, aliquid repellendus? Ad in distinctio ea
+        ab at commodi quod repellendus hic, culpa repellat, quae nam?
+      </p>
+    </div>
+  </body>
+</html>

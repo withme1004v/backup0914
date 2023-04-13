@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery UI</title>
+    <style>
+      .box {
+        position: relative;
+        width: 520px;
+        height: 50px;
+        border: 1px solid #000;
+        margin-top: 20px;
+        padding: 10px;
+      }
+      .ball {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #f00;
+      }
+    </style>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        //$("button").click(function () {
+        /*$(".ball").each(function(){
+           var effect = $(this).attr("data-ease");
+           $(this).animate({left:"590px"},1000,effect)
+                  .animate({left:"10px"},1000,effect);
+        });*/
+        $(".box").each(function () {
+          var effect = $(this).children("div").attr("data-ease");
+          console.log(effect);
+          /*$(this)
+            .children("div")
+            .animate({ left: "500px" }, 1000, effect)
+            .animate({ left: "10px" }, 1000, effect);*/
+        });
+        // });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>basic :: animate easing</h1>
+    <button class="btn">move</button>
+    <div class="box">
+      linear
+      <div class="ball" data-ease="linear"></div>
+    </div>
+    <div class="box">
+      easeOutQuart
+      <div class="ball" data-ease="easeOutQuart"></div>
+    </div>
+    <div class="box">
+      easeInOutElastic
+      <div class="ball" data-ease="easeInOutElastic"></div>
+    </div>
+    <div class="box">
+      easeOutBounce
+      <div class="ball" data-ease="easeOutBounce"></div>
+    </div>
+  </body>
+</html>

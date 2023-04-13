@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    
+    </script>
+</head>
+<body>
+    <!-- 익명함수의 매개변수(event)가 '이벤트 객체'를 의미 
+매개변수 이므로 꼭 변수명을 'event'로 사용할 필요는 없지만 보통 이벤트 객체의 의미로 'event'나 'e'로 많이 사용 -->
+   <a href="http://www.naver.com" id="google" onclick="google(event)">구글</a>
+   <!-- onclick="url_link(event)"event라는 변수라야 실행됨 -->
+   <script>
+    
+    function google(a){
+    a.preventDefault();
+    location.href = "http://www.google.com";
+    } 
+
+</script>
+
+
+    <!-- <a href="http://www.naver.com" id="google">구글</a>
+    <script>
+        let go = document.getElementById("google");
+        function google(event) {
+            event.preventDefault();
+             location.href = "http://www.google.com";
+        }
+        go.onclick = function(e){
+            google(e);
+        }
+    </script> -->
+    <!-- <a href="http://www.naver.com" id="google">구글</a>
+    <script>
+        let go = document.getElementById("google");
+        
+        go.onclick = function(e){
+            e.preventDefault();
+             location.href = "http://www.google.com";
+        }
+    </script> -->
+    <!-- <a href="http://www.naver.com" id="google">구글</a>
+    <script>
+        let go = document.getElementById("google");
+        
+        go.onclick = function(){
+            location.href = "http://www.google.com";
+            return false;
+        }
+    </script> -->
+</body>
+</html>

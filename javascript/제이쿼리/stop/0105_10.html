@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      p {
+        width: 100px;
+        text-align: center;
+      }
+      .txt1 {
+        background: #f00;
+      }
+      .txt2 {
+        background: #0f0;
+      }
+      .txt3 {
+        background: #00f;
+      }
+    </style>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+      $(function () {
+        function move() {
+          $(".txt1")
+            .animate({ "margin-left": "+=50px" }, 500)
+            .animate({ "margin-left": "-=10px" }, 500);
+          $(".txt2")
+            .animate({ "margin-left": "+=50px" }, 500)
+            .animate({ "margin-left": "-=10px" }, 500);
+          $(".txt2").stop();
+          $(".txt3")
+            .animate({ "margin-left": "+=50px" }, 500)
+            .animate({ "margin-left": "-=10px" }, 500);
+          $(".txt3").stop(true, true);
+        }
+        $(".btn1").click(move);
+      });
+    </script>
+  </head>
+  <body>
+    <p><button class="btn1">50px 전진</button></p>
+    <p class="txt1">효과1</p>
+    <p class="txt2">효과2<br />stop()</p>
+    <p class="txt3">효과3<br />stop(true,true)</p>
+  </body>
+</html>

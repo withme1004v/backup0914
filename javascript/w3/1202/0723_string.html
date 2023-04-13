@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+      //String객체:자바스크립트에서 문자열을 다루는 객체
+      var str1 = "Hello";
+      var str2 = new String("nice to meetm you");
+      document.write(str1.length + "<br>");
+      document.write(str2.length + "<br>");
+      document.write(str2.toUpperCase() + "<br>");
+      document.write(str1.toLowerCase() + "<br>");
+      document.write(str2.charAt() + "<br>");
+      //index는 0부터 시작 index값을 반환 생략(기본값은 0)첫글자를 반환
+      document.write(str2.substring(2, 7) + "<br>");
+      //substring()메소드는 문자객체의 시작인덱스부터 종료인덱스전까지 문자열을 반환
+      document.write(str2.substr(2, 5) + "<br>");
+      //시작인덱스부터 몇개의 문자열을 가져올때 사용
+      document.write(str2.slice(-3, -2) + "<br>");
+      document.write(str2.replace("nice", "Nice") + "<br>");
+      document.write(str1.replace("He", "Nice") + "<br>");
+      document.write(str2.concat("good") + "<br>");
+      document.write("Indexof:" + str2.indexOf("k") + "<br>");
+      //시작점으로부터 처음 만나는 문자열의 인덱스 번호
+      document.write("lastIndexof:" + str2.lastIndexOf("m") + "<br>");
+      //끝점으로부터 처음 만나는 문자열의 인덱스 번호
+      document.write("match:" + str2.match("m") + "<br>");
+      document.write("searcsfassssssssssssh:" + str2.search("m") + "<br>");
+      var arr = str2.split(" ");
+      for (var i = 0; i <= 3; i++) {
+        document.write(arr[i] + "<br>");
+      }
+      var str3 = "123456-1567890";
+      //츨력 -- > 123456-1*****
+      var s = "*";
+
+      document.write(str3.length + "<br>");
+      document.write(str3.substring(0, str3.length - 6) + s.repeat(6) + "<br>");
+      document.write(str3.substr(0, str3.length - 6) + "*******" + "<br>");
+      document.write(str3.slice(0, 8) + "*******" + "<br>");
+      document.write(str3.slice(8, 12) + "<br>");
+      document.write(str3.replace(str3.slice(8), "******") + "<br>");
+      document.write(str3.replace(str3.slice(-6), "******") + "<br>");
+    </script>
+  </head>
+  <body></body>
+</html>

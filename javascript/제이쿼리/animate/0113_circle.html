@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>사용자 클릭 갤러리</title>
+<style>
+    #wrap {
+        position: relative;
+        margin: 0 auto;
+        width: 640px;
+        height: 400px;
+    }
+    #bigimg {
+        padding: 10px 20px;
+        position: relative;
+    }
+    #bigimg img {
+        width: 600px;
+        height: 300px;
+        
+    }
+    #wrap .gallery {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+    .gallery a {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #000;
+        text-align: center;
+    }
+    .gallery a.on {
+        background: #ccc;
+    }
+    .gallery img {
+        width: 100px;
+        border: 2px solid #afafaf;
+    }
+    .gallery img:hover {
+        border-color: #fff;
+    }
+    .gallery img.on {
+        border-color: #f90;
+    }
+    #caption {
+      position: absolute;
+      bottom: 0;
+      width: 600px;
+      padding: 10px;
+      box-sizing: border-box;
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+      border: 1px solid #ccc;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  $(function(){
+    var current=1; // 현재 이미지 순서에 해당하는 변수를 지정합니다.
+    $("div.gallery a").eq(current-1).addClass("on");
+
+    var interval; // 인터벌 움직임을 만들 변수 지정합니다.
+    interval=setInterval(interMove, 1500);
+     // setTimeout(함수, 시간); 1번 실행
+     // setInterval(함수, 시간); 정해진 시간마다 실행, clearInterval(interval);
+
+    function interMove(){ // 일반 함수
+	if(current < 6){ // 1, 2, 3, 1, 2, 3, ...
+		current=current+1;
+	}else{
+		current=1;
+	}
+	// console.log("current : "+current);
+    
+	$("div.gallery a").each(function(){
+		if($(this).hasClass("on")){
+			$(this).removeClass("on");
+		}
+	});
+	$("div.gallery a").eq(current-1).addClass("on");
+
+	var path="images/photo"+current+".jpg";
+	// console.log("path : "+path);
+
+	 /*$("#bigimg img").attr("src", path)
+	 .css({opacity:0})
+	 .stop()
+	 .animate({opacity:1}, 500);*/
+	effectImg($("#bigimg img"), path);
+}
+function effectImg(img, path){
+	img.attr("src", path).css({opacity:0}).stop().animate({opacity:1}, 500);
+	return false;
+}
+$("#bigimg, .gallery a").hover(
+	function(){
+		clearInterval(interval);
+	},
+	function(){
+		interval=setInterval(interMove, 1500);
+	}
+);
+      
+$(".gallery em").hide();
+      
+$(".gallery a").click(function(e){
+	e.preventDefault();
+	$(".gallery a").each(function(){
+		if($(this).hasClass("on")){
+			$(this).removeClass("on");
+		}
+	});
+    $(".gallery a").removeClass("on");
+	$(this).addClass("on");
+
+	current=$(this).index();
+    console.log("current: "+current);
+	current = current+1;
+	var path=$(".gallery a").eq(current-1).attr("href");
+    console.log(path);
+	effectImg($("#bigimg img"), path);
+    
+    //caption
+    
+});
+  });
+</script>
+</head>
+
+<body>
+<div id="wrap">
+	<div id="bigimg"><img src="images/photo1.jpg" alt="photo" /></div>
+	<div class="gallery">
+		<a href="images/photo1.jpg" title="img1">
+		</a>
+		<a href="images/photo2.jpg" title="img2">
+		</a>
+		<a href="images/photo3.jpg" title="img3">
+        </a>
+		<a href="images/photo4.jpg" title="img4">
+        </a>
+		<a href="images/photo5.jpg" title="img5">
+        </a>
+		<a href="images/photo6.jpg" title="img6">
+		</a>
+	</div>
+</div>
+</body>
+        </html>

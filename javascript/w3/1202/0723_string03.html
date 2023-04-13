@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+      var userEmail = prompt("당신의 이메일 주소는?", "");
+      var arr = [
+        ".com",
+        ".co.kr",
+        ".net",
+        ".or.kr",
+        ".go.kr",
+        "ac.kr",
+        ".hs.kr",
+        ".ms.kr",
+        ".es.kr",
+      ];
+      var check1 = false;
+      var check2 = false;
+      if (userEmail.indexOf("@") > 0) {
+        check1 = true;
+      }
+      console.log(userEmail.indexOf(".com"));
+      for (var i = 0; i < arr.length; i++) {
+        if (userEmail.indexOf(arr[i]) > 0) {
+          check2 = true;
+        }
+      }
+      if (check1 == true && check2 == true) {
+        document.write(userEmail + "<br>");
+      } else {
+        alert("이메일 형식이 잘못 되었습니다.");
+        location.reload();
+      }
+      //   document.write("check1 :" + check1 + "<br>");
+      //   document.write("check2 :" + check2 + "<br>");
+      //  var imgSrc = "images/bnt_out.jpg";
+      //  var result = imgSrc.replace("out","over");
+      // console.log(result);
+    </script>
+  </head>
+  <body></body>
+</html>

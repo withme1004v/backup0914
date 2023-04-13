@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+          margin-top: 1000px;
+          padding-bottom: 1000px;  
+        }
+    </style>
+    <script>
+       document.onmousemove = function(e) {
+          var myform = document.form1; 
+          myform.clt_x.value = "ClientX :"+e.clientX;
+          myform.clt_y.value = "ClientY :"+e.clientY;
+        //문서 기준으로 좌표구함
+          myform.scr_x.value = "pageX :"+e.screenX;
+          myform.scr_y.value = "pageY :"+e.screenY;
+        //스크린(모니터) 기준으로 좌표 구함   
+          myform.page_x.value = "pageX :"+e.pageX;
+          myform.page_y.value = "pageY :"+e.pageY;
+        //문서를 기준으로 스크롤바 높이까지 계산해 좌표 구함
+       }
+    </script>
+</head>
+<body>
+   <form action="" name="form1">
+       <p><input type="text" name="clt_x" id="clt_x"></p>
+       <p><input type="text" name="clt_y" id="clt_y"></p>
+       <p><input type="text" name="scr_x" id="scr_x"></p>
+       <p><input type="text" name="scr_y" id="scr_y"></p>
+       <p><input type="text" name="page_x" id="page_x"></p>
+       <p><input type="text" name="page_y" id="page_y"></p>
+   </form>
+</body>
+</html>

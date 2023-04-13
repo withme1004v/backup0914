@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오프캔버스패턴</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        body {
+            font: 1em Arial, "맑은 고딕",돋움, Doctum, sans-serif;
+            overflow: hidden;
+        }
+        #wrap {
+            width: 80%;
+            margin: 0 auto;
+        }
+        #wrap_box {
+            width: 100%;
+        }
+        #box_a {
+            float: left;
+            width: 30%;
+            height: 400px;
+            background: #aaa;
+        }
+        #box_b {
+            float: left;
+            width: 40%;
+            height: 400px;
+            background: #bbb;
+        }
+        #box_c {
+            float: left;
+            width: 30%;
+            height: 400px;
+            background: #ccc;
+        }
+        @media screen and (max-width: 1024px) {
+            #wrap {
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            #wrap_box {
+                width: 150%;
+            }
+            #box_a {
+                width: 33.333%
+            }
+            #box_b {
+                width: 33.334%
+            }
+            #box_c {
+                width: 33.333%
+            }
+        }
+        @media screen and (max-width: 480px) {
+            #wrap_box {
+                width: 300%;
+                margin-left: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="wrap_box">
+            <div id="box_a"></div>
+            <div id="box_b"></div>
+            <div id="box_c"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

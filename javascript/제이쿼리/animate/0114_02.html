@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>갤러리</title>
+<style>
+    body {
+        margin: 20px auto;
+        padding: 0;
+        width: 500px;
+        font: 11px Arial,"sans-serif";
+        background: #05184d;
+    }
+    #slider {
+        margin: 0 auto;
+        width: 500px;
+        background: #fff;
+        border: 2px solid #fdf6dd;
+        position: relative;
+        overflow: hidden;
+    }
+    #viewer {
+        position: relative;
+        height: 280px;
+    }
+    img {
+        position: absolute;
+        width: 500px;
+    }
+    #image1 {
+        left: 0;
+        top: 0;
+    }
+    #image2 {
+        left: 500px;
+        top: 0;
+    }
+    #image3 {
+        left: 1000px;
+        top: 0;
+    }
+    #image4 {
+        left: 1500px;
+        top: 0;
+    }
+    #btnGroup {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        right: 0;
+        bottom: 2%;
+    }
+    #btnGroup li {
+        float: left;
+        margin-right: 6px;
+        width: 16px;
+        height: 16px;
+        list-style: none;
+        background: #60f;
+        cursor: pointer;
+    }
+    #btnGroup li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 1.5;
+        text-align: center;
+        text-decoration: none;
+        background: #fdf6dd;
+        color: #000;
+    }
+    #btnGroup li a:hover {
+        background: #cf0;
+    }
+    #btnGroup li a.active {
+        background: #05184d;
+        color: #fff;
+    }
+</style>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script>
+  $(function(){
+     var current = 0;
+     var $current = $("#btn"+current).find("a");
+     $current.addClass("active");
+     
+     $("#btnGroup a").click(function(e){
+       e.preventDefault();
+       $current.removeClass("active");
+       $current = $(this);
+       var idname = $(this).parent().attr("id");
+       var n = idname.substr(3,1);//0 1 2 3;
+       console.log("n:"+n)
+       slideTarget(n);
+     });
+      
+      
+     $("#next").click(function(){
+       if(current < 3) {
+           current++;
+           $current.removeClass("active");
+           $current = $("#btn"+current).find("a");
+           console.log($current);
+           
+           slideTarget(current);
+       }  
+     });
+     $("#prev").click(function(){ 
+         if(current > 0){
+            current--;
+            $current.removeClass("active");
+            $current = $("#btn"+current).find("a");
+            slideTarget(current); 
+        }
+     });
+     function slideTarget(n) {
+       var wd = $("img").width();
+       var pos = -(n*wd)+"px";
+       current = n;
+       console.log("current :"+current);
+       console.log("pos :"+pos);
+      $("#viewer").animate({left:pos},500,"easeInOutQuart",function(){
+        $current.addClass("active");
+      });
+     }
+  });
+</script>
+</head>
+
+<body>
+    <div id="slider">
+        <div id="viewer">
+            <img src="images/photo1.jpg" alt="photo1" id="image1">
+            <img src="images/photo2.jpg" alt="photo2" id="image2">
+            <img src="images/photo3.jpg" alt="photo3" id="image3">
+            <img src="images/photo4.jpg" alt="photo4" id="image4">
+        </div>
+        <ul id="btnGroup">
+            <li id="btn0"><a href="images/photo1.jpg">1</a></li>
+            <li id="btn1"><a href="images/photo2.jpg">2</a></li>
+            <li id="btn2"><a href="images/photo3.jpg">3</a></li>
+            <li id="btn3"><a href="images/photo4.jpg">4</a></li>
+        </ul>
+    </div>
+    <button id="prev">previous</button>
+    <button id="next">next</button>
+</body>

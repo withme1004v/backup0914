@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+            body {
+                font-family: "맑은 고딕";
+                font-size: 0.9em;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .container {
+                margin: 100px auto;
+            }
+            .container li {
+                float: left;
+                margin-right: 30px;
+                width: 30px;
+                height: 30px;
+            }
+            .container li a {
+                display: block;
+                width: 30px;
+                height: 30px;
+                /*border-radius: 50%;*/
+                text-indent: -10000px;
+                background: #eaeaea;
+            }
+            .container li a:hover {
+                background: #ccc;
+            }
+            .container li a.on {
+                background: #09f;
+                cursor: default;
+            }
+		</style>
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script>
+		  $(function(){
+            var count = 0
+            $("ul > li").eq(0).find("a").addClass("on");
+            var interval = setInterval(gallery,3000); 
+              
+            function gallery(){
+              if(count >=0 && count < 5) {
+                 count++;
+              }else if(count >=5 && count <10){
+                 count--; 
+              }else {
+                  count=0;
+              }
+                console.log("count :"+count);
+             $("ul > li > a").each(function(){
+              if($(this).hasClass("on")) {
+                  $(this).removeClass("on");
+              } 
+             });
+             $("ul > li").eq(count).find("a").addClass("on");
+             console.log("count :"+count);
+            
+            }
+            $("ul > li > a").hover(function(){
+              clearInterval(interval)  ;
+            },function(){
+              interval = setInterval(gallery,3000);  
+            });
+            $("ul > li > a").click(function(e){
+              e.preventDefault();
+              var index = $(this).parent().index();
+              count = index;
+              $("ul > li > a").each(function(){
+                 if($(this).hasClass("on")){
+                     $(this).removeClass("on");
+                 } 
+              });
+              $("ul > li").eq(count-1).find("a").addClass("on");
+              var path = $("ul > li").eq(count).find("a").attr("href");
+              console.log("path :"+ path);
+            });
+          });
+		</script>
+	</head>
+	<body>
+        <div class="container">
+            <ul>
+                <li><a href="images/photo1.jpg">0</a></li>
+                <li><a href="images/photo2.jpg">1</a></li>
+                <li><a href="images/photo3.jpg">images/photo4.jpg</a></li>
+                <li><a href="images/photo4.jpg">images/photo5.jpg</a></li>
+                <li><a href="images/photo5.jpg">images/photo6.jpg</a></li>
+                <li><a href="images/photo6.jpg">images/photo7.jpg</a></li>
+            </ul>
+        </div>
+	</body>
+</html>
+	

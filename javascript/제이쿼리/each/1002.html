@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>basic :: each event</title>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+<style>
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background: #555;
+	color: #000;
+}
+.container .title {
+	margin: 0 0 35px;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: #000;
+}
+.container .round {
+	position: relative;
+	margin-bottom: 10px;
+	width: 20px;
+	height: 20px;
+	background: #666;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(function(){
+	$(".round").each(function(i){
+		$(this).delay(500*i).animate({left:"500px"}, 3000);
+	});
+});
+</script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<div class="container">
+	<h1 class="title">basic :: each event</h1>
+	<div class="round"></div>
+	<div class="round"></div>
+	<div class="round"></div>
+	<div class="round"></div>
+	<div class="round"></div>
+	<div class="round"></div>
+</div>
+</body>
+</html>

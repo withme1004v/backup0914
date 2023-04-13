@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <script>
+      var game = prompt("가위, 바위, 보 중 선택하세요","가위");
+      var gamenum;
+      switch(game) {
+             case "가위":
+               gamenum = 1;
+               break;
+             case "바위":
+               gamenum = 2;
+               break;
+             case "보":
+               gamenum = 3;
+               break;
+             default:
+               alert("잘못 선택하셨습니다.");
+               location.reload();
+             }
+        console.log(gamenum);
+      var i = Math.ceil(Math.random()*3);
+      document.write('<img src="images/math_img_'+i+'.jpg">');
+        /*if(gamenum == i) {
+            document.write("<h1>잘 맞췄습니다. 축하합니다.</h1>");
+        }else {
+            document.write("<h1>틀렸네요~ 다음기회에</h1>");
+        }*/
+        if(gamenum == 1) {
+            if(i == 2 ) {
+                document.write("<h1>졌습니다.</h1>");
+            } else if(i == 3) {
+                document.write("<h1>이겼습니다.</h1>");
+            } else {
+                document.write("<h1>다시한번</h1>");
+            }
+        } else if(gamenum == 2) {
+            if(i == 2 ) {
+                document.write("<h1>다시한번</h1>");
+            } else if(i == 3) {
+                document.write("<h1>졌습니다.</h1>");
+            } else {
+                document.write("<h1>이겼습니다</h1>");
+            }
+        } else {
+           if(i == 2 ) {
+                document.write("<h1>이겼습니다.</h1>");
+            } else if(i == 3) {
+                document.write("<h1>다시한번/h1>");
+            } else {
+                document.write("<h1>졌습니다</h1>");
+            } 
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

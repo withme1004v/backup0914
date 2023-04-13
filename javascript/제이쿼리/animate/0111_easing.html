@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+      .slide {
+        width: 600px;
+        height: 350px;
+        overflow: hidden;
+      }
+    </style>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+      $(function () {
+        /*$("button").click(function(){
+            var effect = $(this).text();
+            console.log(effect);
+            $(".slide").slideUp(1000,effect,function(){
+                $(this).slideToggle();
+            });  
+          }); */
+        $("button").click(function () {
+          var effect = $(this).attr("data-ease");
+          $(".slide").slideUp(1000, effect, function () {
+            $(this).slideDown(1000, effect);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="slide"><img src="../../images/photo1.jpg" alt="photo1" /></div>
+    <!--<button>easeOutQuart</button>
+	<button>easeInOutElastic</button>
+	<button>easeOutBack</button>
+	<button>easeOutBounce</button>-->
+    <button data-ease="swing">swing</button>
+    <button data-ease="linear">linear</button>
+    <button data-ease="easeOutQuart">easeOutQuart</button>
+    <button data-ease="easeInOutElastic">easeInOutElastic</button>
+    <button data-ease="easeOutBack">easeOutBack</button>
+    <button data-ease="easeOutBounce">easeOutBounce</button>
+  </body>
+</html>
