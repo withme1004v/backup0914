@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>transform</title>
+    <style>
+        *{
+                margin: 0;
+                padding: 0;
+            }
+            #graph{
+                width: 1000px;
+                margin: 50px auto;
+                border: 1px solid red;
+            }
+            #graph ul{
+                list-style: none;
+            }
+            #graph .bar{
+                width: 10px;
+                height: 40px;
+                margin: 20px 0px;
+                transition: width 3s;
+            }
+            #graph .bar:first-child{
+                background-color: red;
+                transition-timing-function: linear;
+            }
+            #graph .bar:nth-child(2){
+                background-color:blue;
+                transition-timing-function: ease;
+            }
+            #graph .bar:nth-child(3){
+                background-color:green;
+                transition-timing-function: ease-in;
+            }
+            #graph .bar:nth-child(4){
+                background-color:cyan;
+                transition-timing-function: ease-out;
+            }
+            #graph .bar:nth-child(5){
+                background-color:yellow;
+                transition-timing-function: ease-in-out;
+            }
+            #graph .bar:last-child{
+                background-color:magenta;
+                transition-timing-function: cubic-bezier(.69,.03,.93,.37);
+            }
+            #graph:hover li{
+                width: 1000px;
+            }
+    </style>
+</head>
+<body>
+    <div id="graph">
+        <ul>
+            <li class="bar"></li>
+            <li class="bar"></li>
+            <li class="bar"></li>
+            <li class="bar"></li>
+            <li class="bar"></li>
+            <li class="bar"></li>
+        </ul>
+    </div>
+</body>
+</html>

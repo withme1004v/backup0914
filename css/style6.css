@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+/*
+@font-face {
+    font-family: genericon;
+    src: url("webfonts/genericons-regular-webfont.eot");
+    src: url("webfonts/genericons-regular-webfont.woff") format("woff"), url("webfonts/genericons-regular-webfont.ttf") format("ttf");
+}*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #000;
+    text-align: center;
+}
+h1{
+    color: #fff;
+    padding-top: 30px;
+}
+h2{
+    color: dodgerblue;
+    padding: 10px 0 30px 0;
+}
+ul{
+    list-style: none;
+    margin: 0 500px;
+}
+li a{
+    display: block;
+    width: 38px;
+    height: 39px;
+    background-image: url(../images/navigation.jpg);
+    text-decoration: none;
+    margin: 10px;
+    position: relative;
+}
+li a span{
+    width: 0;
+    height: 39px;
+    line-height: 39px;
+    position: absolute; 
+    /* 영향을 받지않음 = width, height 적용 */
+    /* position: relative
+    display: block; */
+    left: 38px;
+    overflow: hidden;
+    /* 넘치는 글자 숨기기 */
+    transition: all 0.2s;
+}
+li:hover span{
+/*    width: 100px;
+    transform: translate(38px, 0);*/
+    overflow: visible;
+    width: auto; 
+    /* width: auto; 데이터 만큼
+    width 설정X - 부모width적용 */
+    padding: 0 20px;
+    /* span 글자는 width값 적용X?
+    글자에 transition 적용X
+    여백에 transition 적용 */
+}
+
+li .home{
+    background-position: 0 0;
+}
+li:hover .home{
+    background-position: 0 39px;
+}
+li .home span{
+    background: #7da315;
+    color: #3d4f0c;
+    text-shadow:#99bf31;
+}
+
+li .about{
+    background-position: -38px 0;
+}
+li:hover .about{
+    background-position: -38px 39px;
+}
+li .about span{
+    background: #1e8bb4;
+    color:#223a44;
+    text-shadow:#44a8d0;
+}
+
+li .services{
+    background-position: -76px 0;
+}
+li:hover .services{
+    background-position: -76px 39px;
+}
+li .services span{
+    background: #c86c1f;
+    color:#223a44;
+    text-shadow:#d28344;
+}
+
+li .portfolio{
+    background-position: -114px 0;
+}
+li:hover .portfolio{
+    background-position: -114px 39px;
+}
+li .portfolio span{
+    background: #d0a525;
+    color: #604e18;
+    text-shadow: 1px 1px 0 #d8b54b;
+}
+
+li .contact{
+    background-position: -152px 0;
+}
+li:hover .contact{
+    background-position: -152px 39px;
+}
+li .contact span{
+    background: #af1e83;
+    color: #460f35;
+    text-shadow: 1px 1px 0 #d244a6;
+}

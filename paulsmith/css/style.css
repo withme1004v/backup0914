@@ -1,0 +1,63 @@
+@charset "utf-8";
+@font-face {
+    font-family: solid;
+    src: url(../../webfonts/fa-solid-900.woff) format("woff");
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+#wrapper {
+    width: 100%;
+}
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    background: #000; 
+}
+.top a {
+    color: #fff;
+}
+.top .left ul, .top .right ul{
+    display: flex;
+}
+.top .left li {
+    font-family: solid;
+}
+.logo_wrap {
+    /* display: flex;
+    background: #ccc;
+    justify-content: center; */
+    text-align: center;
+}
+
+.logo_wrap .logo {
+    /* display: flex;
+    justify-content: center; */
+    background: #ccc;
+    display: inline-block;
+    width: 197px;
+}
+.logo_wrap .logo_right {
+    /* display: flex;
+    justify-content: end; */
+    float: right;
+    background: #ddd;
+}
+.logo_wrap .logo_right ul {
+    display: flex;
+    background: #ddd;
+}
+#visual img {
+    width: 100%;
+    max-width: 100%;
+}

@@ -1,0 +1,23 @@
+zerif테마
+yourTeam 마우스 오버시
+동그라미로 변경
+wp-content-->themes-->zerif-life
+style.css
+.team-member .details {
+left: 50%;
+  transform: translateX(-50%);
+  width: 174px;
+  height: 174px;
+  border-radius: 50%;
+추가
+@media (max-width: 992px) {
+.team-member .details {
+    width: 128px !important;
+    height: 128px !important;
+  }
+@media (max-width: 767px) {
+.team-member .details {
+    width: 174px !important;
+    height: 174px !important;
+  }
+추가한다.

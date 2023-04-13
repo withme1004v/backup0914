@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Icon</title>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <ul>
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+      </ul>
+    <script>
+      const items = document.querySelectorAll('.item');
+
+        /* items.forEach((item, index) => {
+        item.addEventListener('click', function(event) {
+            const clickedItemIndex = Array.from(items).indexOf(event.target);
+            console.log(`Clicked item index: ${clickedItemIndex}`);
+        });
+        }); */
+        items.forEach(function(item, index) {
+        item.addEventListener('click', function(event) {
+            const i = Array.from(items).indexOf(event.target);
+            console.log(`${i}`);
+        });
+        });
+      //위 코드에서는 querySelectorAll() 메서드로 클래스 이름이 item인 모든 요소를 선택하고, forEach() 메서드를 사용하여 선택된 요소들에 대해서 이벤트 핸들러를 등록합니다. 이벤트 핸들러에서는 event.target 속성으로 클릭한 요소를 가져온 후, indexOf() 메서드를 사용하여 해당 요소의 인덱스를 배열에서 찾습니다. 마지막으로, console.log() 메서드를 사용하여 클릭한 요소의 인덱스를 콘솔에 출력합니다.
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+https://getbootstrap.kr/
+예시메뉴
+예시다운로드 소스코드 다운로드
+<link href="css/bootstrap.css" rel="stylesheet" />
+<link href="css/carousel.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<div class="carousel-item active">
+            <img src="images/photo1.jpg" alt="photo1" />
+
+<div class="col-lg-4">
+            <img src="images/photo1.jpg" alt="photo1" />
+
+<div class="col-md-5">
+            <img src="images/photo1.jpg" alt="photo1" />
+          </div>
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.col-lg-4 img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.col-md-5 img {
+  max-width: 500px;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}

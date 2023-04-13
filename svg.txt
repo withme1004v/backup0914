@@ -1,0 +1,9 @@
+freepik사이트에서 
+flower 검색
+Thank_you_card_with_white_pink_watercolor_floral
+다운로드
+압축풀고 일러스트에서 eps파일 열기
+그룹해제
+이미지만 선택후 오른쪽버튼
+export selection
+svg로 저장 jpg로 저장

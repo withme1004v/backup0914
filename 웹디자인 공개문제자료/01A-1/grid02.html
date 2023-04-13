@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>grid</title>
+    <style>
+        .grid-container {
+            display: grid;
+            width: 1200px;
+            margin: 0 auto;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 100px 300px 200px 100px;
+        }
+        .item1 {
+            background: #aaa;
+            grid-column: 1 / 4;
+        }
+        .item2 {
+            background: #bbb;
+            grid-column: 1 / 4;
+        }
+        .item3 {
+            background: #ccc;
+        }
+        .item4 {
+            background: #ddd;
+        }
+        .item5 {
+            background: #eee;
+        }
+        .item6 {
+            background: #000;
+            grid-column: 1 / 4;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item1">header-background: #aaa</div>
+        <div class="item2">slide-background: #bbb</div>
+        <div class="item3">contents1-background: #ccc</div>
+        <div class="item4">contents2-background: #ddd</div>
+        <div class="item5">contents3-background: #eee</div>
+        <div class="item6">footer-background: #000</div>
+    </div>
+</body>
+</html>

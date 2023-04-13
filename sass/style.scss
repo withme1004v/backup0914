@@ -1,0 +1,32 @@
+@import "reset";
+
+$primary: crimson;
+$secondary: royalblue;
+h1 {
+  span {
+    color: $secondary;
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  color: $primary;
+  text: {
+    align: center;
+    transform: uppercaser;
+  }
+}
+.box{
+	padding:20px;
+	border:1px solid #333;
+}
+ 
+.news-box{
+	@extend .box;
+	background-color:#eee;
+}
+ 
+.list-box{
+	@extend .box;
+	background-color:#000;	
+}

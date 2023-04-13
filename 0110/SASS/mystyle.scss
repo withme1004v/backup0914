@@ -1,0 +1,55 @@
+/*$기호와 이름을 사용하여 변수를 선언한다*/
+@import "reset";
+$mycolor:#0f0;
+$mysize:18px;
+$mywidth: 500px;
+body{
+    color: $mycolor;
+    font-size: $mysize;
+}
+nav{
+    ul{
+        width: $mywidth;
+    }
+    text:{
+        align:center;
+        transform: uppercase;
+    }
+    a {
+        &:hover{
+            color: #f00;
+        }
+    }
+}
+@mixin myfont {
+    color: #0ff;
+    font-size: 30px;
+    font-weight: bold;
+    border: 1px solid #f00;
+    width: 500px;
+}
+@mixin mylink {
+    text-decoration: underline;
+}
+@mixin mycolor {
+    @include myfont;
+    @include mylink;
+}
+section {
+   @include myfont; 
+}
+.contents{
+    @include mycolor;  
+}
+.box {
+    padding: 20px;
+    border: 1px solid #f00;
+}
+.new1 {
+    @extend .box;
+    background: #ccc
+}
+.new2 {
+    @extend .box;
+    background: #ddd;
+}

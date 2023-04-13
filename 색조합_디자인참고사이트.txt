@@ -1,0 +1,8 @@
+color.adobe.com
+paletton.com : 색상의 배합과 인기있는 배합 소스 제공 정말 유명한 사이트
+BrandColors.net : 브랜드,기업 로고 컬러조합 제공
+moviesincolor.com :영화 스틸컷 색상 매칭 사이트 
+www.design-seeds.com : 이미지와 색상 조합 제공, 색상에 어울리는 사진까지 서치 가능 (주로 파스텔톤) 
+https://uigradients.com/#GreenandBlue : 그라디언트의 색 조합 제공, 주로 배경과 오브젝트 표현할 때 유용함
+https://color.hailpixel.com : 느낌있는 색상을 찾고 싶을 때 사용하는 사이트, 마우스를 움직이며 색 서치 가능.
+https://www.flatuicolorpicker.com : 단색 형태의 톤 조절 사이트, 단색 디자인의 작업시 유용함

@@ -1,0 +1,32 @@
+(function(){
+    // 카테고리 목록 sticky
+    var page_tp, window_vh;
+
+    if($('.line-tag').hasClass('active-line')) {
+        page_tp = parseInt($('.page').css('padding-top')) + $('.line-tag').outerHeight();
+        window_vh = $(window).height() - page_tp;
+    } else {
+        page_tp = parseInt($('.page').css('padding-top'));
+        window_vh = $(window).height() - page_tp;
+    }
+
+    stickybits('#sticky-navi', {
+        stickyBitStickyOffset: page_tp
+    });
+
+    // 카테고리 목록 Height 값 셋팅
+    $('.product-list-navi').css('height', window_vh);
+
+    $(window).resize(function(){
+        if($('.line-tag').hasClass('active-line')) {
+            page_tp = parseInt($('.page').css('padding-top')) + $('.line-tag').outerHeight();
+            window_vh = $(window).height() - page_tp;
+        } else {
+            page_tp = parseInt($('.page').css('padding-top'));
+            window_vh = $(window).height() - page_tp;
+        }
+
+        $('.product-list-navi').css('height', window_vh);
+        $('#sticky-navi').css('top', page_tp);
+    })
+})(jQuery)

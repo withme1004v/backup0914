@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+/*
+@font-face {
+    font-family: genericon;
+    src: url("webfonts/genericons-regular-webfont.eot");
+    src: url("webfonts/genericons-regular-webfont.woff") format("woff"), url("webfonts/genericons-regular-webfont.ttf") format("ttf");
+    src: url("webfonts/genericons-regular-webfont.woff") format("woff"), url("webfonts/genericons-regular-webfont.ttf") format("ttf");
+}*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    background: #32373d;
+    font-size: 100%; /* 100% = 16px */
+}
+
+.wrap{
+    width: 14em; /* 14*16px */
+    font-size: 0.8em; /* 0.8*16px */
+    margin: 100px auto;
+    border: 1px solid #000;
+}
+
+.menu{
+    width: auto;
+    height: auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.7),
+        0 0 18px rgba(0,0,0,0.1);
+}
+.menu > li > a{
+    display: block;
+    width: 100%;
+    height: 2.75em;
+    line-height: 2.75em;
+    text-indent: 2.75em; /* 들여쓰기 */
+    color: #fff;
+    background: #616975;
+    border-bottom: 1px solid #33373d;
+    box-shadow: 0 1px 0 #878e98 inset;
+    position: relative;
+}
+.menu > li > a::before{
+    content: "";
+    width: 1em;
+    height: 1em;
+    font-size: 36px; /* em 쓴 곳에 font-size px을 주면 px로 기준 잡음 */
+    background: url(images/sprite.png);
+    position: absolute;
+    left: 0;
+}
+.menu > li:nth-child(1) > a::before{
+    background-position: 0 0;
+}
+.menu > li:nth-child(2) > a::before{
+    background-position: -38px 0;
+}
+.menu > li:nth-child(3) > a::before{
+    background-position: 0 -38px;
+}
+.menu > li:nth-child(4) > a::before{
+    background-position: -38px -38px;
+}
+.menu > li:nth-child(5) > a::before{
+    background-position: -76px 0;
+}
+
+.menu > li > a:hover, .menu > li:target > a{
+    background: #35afe3;
+}
+.menu li a:hover, .menu li a:hover span{
+    color: #32373d;
+}
+
+.menu > li > a span{
+    position: absolute;
+    right: 1em;
+    background: #48515c;
+    border-radius: 0.7em;
+    height: 1em;
+    padding: 0.4em 0.6em;
+    margin: 0.6em 0 0 0;
+    line-height: 1em;
+    text-align: center;
+    text-indent: 0;
+    font-size: 0.8em;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.1);
+}
+.menu > li > a:hover span{
+    background: #2173a1;
+}
+
+.menu li:target .sub{
+    height: auto;
+    opacity: 1;
+}
+
+.sub{
+    height: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.sub li a{
+    display: block;
+    width: 100%;
+    height: 2.75em;
+    line-height: 2.75em;
+    text-indent: 2.75em;
+    font-size: 0.7em;
+    color: #878d95;
+    background: #fff;
+    border-bottom: 1px solid #efeff0;
+    position: relative;
+}
+.sub > li > a::before{
+    content: "▶";
+    width: 1em;
+    height: 1em;
+    font-size: 8px;
+    position: absolute;
+    left: -2em;
+}
+.sub > li > a span{
+    position: absolute;
+    right: 1em;
+    border: 1px solid #d0d0d3;
+    border-radius: 0.7em;
+    height: 1em;
+    padding: 0.4em 0.7em;
+    margin: 0.3em 0 0 0;
+    line-height: 1em;
+    text-align: center;
+    text-indent: 0;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+

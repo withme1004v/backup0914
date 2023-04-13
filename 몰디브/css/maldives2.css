@@ -1,0 +1,265 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: poiret;
+  src: url(../webfonts/PoiretOne-Regular.woff) format("woff"),
+    url(../webfonts/PoiretOne-Regular.ttf) format("ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #555;
+}
+body {
+  font: 1em poiret, sans-serif;
+}
+header {
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  background: #fff;
+  left: 0;
+  top: 0;
+  transition: all 0.5s;
+}
+header h1 {
+  width: 180px;
+  height: 136px;
+  background: url(../images/logo1.png);
+  text-indent: -9999px;
+  margin: 70px auto 0;
+}
+#gnb {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#gnb li a {
+  display: block;
+  padding: 8px 30px;
+  font-weight: bold;
+}
+#gnb li a:hover {
+  color: skyblue;
+}
+#gnb li i {
+  margin-right: 15px;
+}
+.snsSet {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50px;
+}
+.snsSet ul li {
+  float: left;
+}
+#util {
+  position: relative;
+  left: 20%;
+  width: 80%;
+  height: 35px;
+  line-height: 35px;
+  background: #212121;
+}
+#util ul li {
+  float: left;
+}
+#util ul li img {
+  vertical-align: middle;
+}
+#util ul:first-child {
+  float: left;
+  margin-left: 20px;
+}
+#util ul:last-child {
+  float: right;
+  margin-right: 20px;
+}
+#contents {
+  position: relative;
+  left: 20%;
+  width: 80%;
+}
+#contents article {
+  float: left;
+  height: 260px;
+}
+#contents article div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+#contents article:first-child {
+  width: 60%;
+  height: 520px;
+}
+#contents article:nth-child(2) {
+  width: 40%;
+}
+#contents article:nth-child(3) {
+  width: 20%;
+}
+#contents article:nth-child(4) {
+  width: 20%;
+}
+#contents article:nth-child(5) {
+  width: 20%;
+}
+#contents article:nth-child(6) {
+  width: 40%;
+}
+#contents article:nth-child(7) {
+  width: 20%;
+}
+#contents article:nth-child(8) {
+  width: 20%;
+}
+#contents article:nth-child(9) {
+  width: 40%;
+}
+#contents article:nth-child(10) {
+  width: 20%;
+}
+#contents article:nth-child(11) {
+  width: 20%;
+}
+#contents article:nth-child(12) {
+  width: 20%;
+}
+
+#contents article .bg1 {
+  background: url(../images/pic1.jpg);
+}
+#contents article .bg2 {
+  background: url(../images/pic2.jpg);
+}
+#contents article .bg3 {
+  background: url(../images/pic3.jpg);
+}
+#contents article .bg4 {
+  background: url(../images/pic4.jpg);
+}
+#contents article .bg5 {
+  background: url(../images/pic5.jpg);
+}
+#contents article .bg6 {
+  background: url(../images/pic6.jpg);
+}
+#contents article .bg7 {
+  background: url(../images/pic7.jpg);
+}
+#contents article .bg {
+  background-size: cover;
+  background-position: center;
+}
+#contents article span {
+  position: absolute;
+  font-size: 60px;
+  color: #fff;
+  bottom: 0;
+  right: 20px;
+  opacity: 0;
+  transform: scale(10);
+  transition: all 0.5s;
+}
+#contents article:hover span {
+  transform: scale(1);
+  opacity: 1;
+}
+#contents article .bg1 span {
+  font-size: 170px;
+  bottom: -40px;
+  right: -10px;
+  opacity: 1;
+  color: #333;
+  transform: scale(1) rotateY(0deg);
+  transition: all 0.5s;
+}
+#contents article .bg1:hover span {
+  transform: scale(1) rotateY(360deg);
+}
+#contents article .txt {
+  color: #666;
+  padding: 40px 30px;
+  box-sizing: border-box;
+}
+#contents article:hover .txt {
+  background: #6ce2fb;
+  color: #fff;
+}
+#contents article .txt i {
+  position: absolute;
+  bottom: -40px;
+  right: -300px;
+  font-size: 300px;
+  color: #b3effc;
+  transition: all 0.5s;
+}
+#contents article:nth-child(3) .txt {
+  background: #bff7fa;
+}
+#contents article:nth-child(3) .txt i {
+  font-size: 200px;
+  color: #fff;
+  bottom: 0;
+  right: 0;
+  opacity: 0.7;
+}
+#contents article:nth-child(11) .txt {
+  background: #e3f1fb;
+}
+#contents article:hover .txt i {
+  right: 0;
+  opacity: 0.5;
+}
+@media screen and (max-width: 1599px) {
+  header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+  }
+  header h1 {
+    position: absolute;
+    top: 10px;
+    margin: 0;
+    width: 250px;
+    height: 50px;
+    background: url(../images/logo2.png);
+  }
+  #gnb {
+    top: 30px;
+    left: 40%;
+    transform: translateX(0);
+    overflow: hidden;
+  }
+  #gnb li {
+    float: left;
+  }
+  .snsSet {
+    left: 90%;
+    transform: translateX(0);
+    bottom: 10px;
+  }
+  #util {
+    width: 100%;
+    left: 0;
+  }
+  #contents {
+    width: 100%;
+    left: 0;
+  }
+}
+@media screen and (max-width: 1279px) {
+}
+@media screen and (max-width: 1023px) {
+}

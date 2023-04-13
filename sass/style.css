@@ -1,0 +1,9 @@
+h1 {
+  color: crimson;
+}
+h1 span {
+  color: royalblue;
+}
+h1 span:hover {
+  color: crimson;
+}/*# sourceMappingURL=style.css.map */

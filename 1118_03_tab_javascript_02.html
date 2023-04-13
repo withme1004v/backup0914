@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Icon</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .tabcontent {
+        color: #000;
+        padding: 50px;
+        text-align: center;
+      }
+      .tablink {
+        display: block;
+        width: 25%;
+        padding: 10px 0;
+        background: #555;
+        float: left;
+        text-align: center;
+        cursor: pointer;
+      }
+      .tablink:hover {
+        background: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="con1" class="tabcontent">
+      <h1>content1</h1>
+<!--      <p>London is the capital city of England</p>-->
+    </div>
+    <div id="con2" class="tabcontent">
+      <h1>content2</h1>
+<!--      <p>Paris is the capital city of France</p>-->
+    </div>
+    <div id="con3" class="tabcontent">
+      <h1>content3</h1>
+<!--      <p>Tokyo is the capital city of Japan</p>-->
+    </div>
+    <div id="con4" class="tabcontent">
+      <h1>content4</h1>
+<!--      <p>Oslo is the capital city of Norway</p>-->
+    </div>
+    <p id="aa" class="tablink" onclick="tab(0)">content1</p>
+    <p id="bb" class="tablink" onclick="tab(1)">content2</p>
+    <p id="cc" class="tablink" onclick="tab(2)">content3</p>
+    <p id="dd" class="tablink" onclick="tab(3)">content4</p>
+    <script>
+      let text;
+      let color = ["red", "green", "blue", "orange"];
+      let list = document.querySelectorAll(".tablink");
+      let content = document.getElementsByClassName("tabcontent");
+      let btn = document.getElementsByClassName("tablink");
+      list.forEach(
+        function(index) {
+            text = index;
+            console.log(text);
+        }
+        );
+      /* btn.addEventListener('click', function(){
+        let i = this.class
+      });
+     function tab(j) {
+      for (let i = 0; i <= 3; i++) {
+        content[i].style.backgroundColor = color[i];
+        btn[i].style.backgroundColor = color[i];
+        content[i].style.display = "none";
+        content[j].style.display = "block";
+      }
+     } */
+    //  document.getElementById("aa").click(); 
+    //tab(0);
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 80%;
+            margin: 0 auto;
+            background: #ccc;
+            text-align: center;
+        }
+        .wrap > div {
+            
+            
+            
+            text-align: left;
+            color: #000;
+            overflow: hidden;
+        }
+        .wrap > div div {
+            width: 25%;
+            float: left;
+        }
+        .wrap > div div:first-child {
+            background: #f00;
+        }
+        .wrap > div div:nth-child(2) {
+            background: #0f0;
+        }
+        .wrap > div div:nth-child(3){
+            background: #00f;
+        }
+        .wrap > div div:last-child {
+            background: #ff0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">부모
+        <div><div>자식요소1</div>
+        <div>자식요소2</div>
+        <div>자식요소3</div>
+        <div>자식요소4</div>
+            </div>
+    </div>
+</body>
+</html>
